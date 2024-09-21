@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Main.css'; // Make sure to add CSS for the chase effect
+import '../Style/ask.css'; // Make sure to add CSS for the chase effect
+import bouquet from "../Assets/bouquet.png";
+import teddy from "../Assets/teddy.png";
 
-const Proposal = () => {
+const Ask = () => {
   const [noPosition, setNoPosition] = useState({ top: '50%', left: '50%' });
   const noButtonRef = useRef(null);
 
@@ -34,11 +36,18 @@ const Proposal = () => {
   return (
     <div className="proposal-container">
       <img
-        src="https://example.com/bouquet.png" // Replace with actual bouquet image URL
+      src={bouquet} // Replace with actual bouquet image URL
         alt="Bouquet of Flowers"
         className="bouquet"
       />
-      <h1>Will you be my Girlfriend?</h1>
+      <div className="top">
+      <img
+      src= {teddy}
+       // Replace with actual bouquet image URL
+        alt="Bouquet of Flowers"
+        className="teddy"
+      />
+      <h1>Will you be my Date?</h1>
       <div className="buttons-container">
         <button className="yes-button" onClick={handleYesClick}>
           Yes
@@ -51,8 +60,9 @@ const Proposal = () => {
           No
         </button>
       </div>
+      </div>
     </div>
   );
 };
 
-export default Proposal;
+export default Ask;

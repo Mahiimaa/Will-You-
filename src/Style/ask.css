@@ -1,15 +1,24 @@
 .proposal-container {
-    text-align: center;
-    margin-top: 50px;
-    position: relative;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
   }
   
   .bouquet {
-    width: 200px;
-    margin-bottom: 20px;
+    position: absolute;
+    z-index: 20;
+    width: auto;
+    height: auto;
   }
-  
+
+  .top{
+    position: relative;
+    z-index: 50;
+  }
+  .teddy{
+    height: 200px;
+    width: 200px;
+  }
+
   h1 {
     font-size: 2em;
     color: #333;
