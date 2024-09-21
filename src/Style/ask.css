@@ -1,22 +1,36 @@
 .proposal-container {
   width: 100vw;
   height: 100vh;
+  position:  absolute;
   }
-  
-  .bouquet {
+  .main{
     position: absolute;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+  }
+  .back {
     z-index: 20;
-    width: auto;
-    height: auto;
+    height: 100%;
+    min-width:100%;
+    filter: blur(5px);
   }
 
   .top{
+    width: 100vw;
+    height: 100vh;
     position: relative;
-    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
   }
-  .teddy{
-    height: 200px;
-    width: 200px;
+
+  .bouquet{
+    height: 500px;
+    width: 500px;
+    transition:ease-in-out;
   }
 
   h1 {
@@ -25,33 +39,104 @@
   }
   
   .buttons-container {
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    margin-left: -200px;
+  }
+
+  .for-yes{
     position: relative;
+    display: inline-block;
   }
   
   .yes-button {
-    padding: 10px 20px;
+    padding: 20px 50px;
     font-size: 18px;
-    background-color: #4CAF50;
+    background-color: #4eb252;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: relative;
+    z-index: 2;
   }
   
+  .character {
+    position: absolute;
+    top: 50%; 
+    right: -5px; 
+    transform: translateY(-50%); 
+    width: 50px;
+    height: auto;
+    transition: right 0.3s ease; 
+    z-index: 1;
+}
+
   .yes-button:hover {
-    background-color: #45a049;
+    background-color: #18881e; 
   }
+
+  .for-yes:hover .character {
+    right: 100%; 
+}
   
   .no-button {
-    padding: 10px 20px;
+    padding: 20px 50px;
     font-size: 18px;
     background-color: #f44336;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    position: absolute;
+    margin-top: 262px;
+    margin-left: 45px;
     transition: top 0.3s, left 0.3s;
+  }
+
+  .dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50; 
+  }
+
+  .dialog-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    animation: popUp 0.4s ease; 
+  }
+ 
+  .close-button {
+    background-color: #fffafa;
+    color: rgb(182, 17, 17);
+    padding: 8px 16px;
+    border-color:rgb(197, 20, 20);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  @keyframes popUp {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
   
